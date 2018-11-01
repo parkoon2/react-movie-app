@@ -10,32 +10,32 @@ class App extends Component {
   state = {
 
   }
-
+  //http://webframeworks.kr/tutorials/translate/es6-promise-api-1/
   componentWillMount() {
     console.log('componentWillMount')
     // api 작업 요청!
   }
   componentDidMount() {
     console.log('componentDidMount')
-
-    setTimeout(() => {
-      this.setState({
-        movies: [
-          {
-            title: '매트릭스',
-            poster: 'http://2korea.hani.co.kr/files/attach/images/64/981/316/001.jpg',
-          },
-          {
-            title: '악마를 보았다',
-            poster: 'https://t1.daumcdn.net/cfile/tistory/1707070D4C7271CCA9',
-          },
-          {
-            title: '집으로',
-            poster: 'https://upload.wikimedia.org/wikipedia/ko/thumb/c/ce/%EC%A7%91%EC%9C%BC%EB%A1%9C_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/250px-%EC%A7%91%EC%9C%BC%EB%A1%9C_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg',
-          }
-        ]
-      })
-    }, 3000)
+    console.log(fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating'))
+    // setTimeout(() => {
+    //   this.setState({
+    //     movies: [
+    //       {
+    //         title: '매트릭스',
+    //         poster: 'http://2korea.hani.co.kr/files/attach/images/64/981/316/001.jpg',
+    //       },
+    //       {
+    //         title: '악마를 보았다',
+    //         poster: 'https://t1.daumcdn.net/cfile/tistory/1707070D4C7271CCA9',
+    //       },
+    //       {
+    //         title: '집으로',
+    //         poster: 'https://upload.wikimedia.org/wikipedia/ko/thumb/c/ce/%EC%A7%91%EC%9C%BC%EB%A1%9C_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg/250px-%EC%A7%91%EC%9C%BC%EB%A1%9C_%ED%8F%AC%EC%8A%A4%ED%84%B0.jpg',
+    //       }
+    //     ]
+    //   })
+    // }, 3000)
   }
 
   _renderMovies = () => {
